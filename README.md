@@ -1,4 +1,4 @@
 # Postonal-Guitar
-An app sketch for postonal Practices in electric guitar
+An app sketch for postonal practices in the electric guitar
 
 You can visit latest version on https://trastes-ejemplo-2.glitch.me/
