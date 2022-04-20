@@ -1,0 +1,106 @@
+.boton{
+  background: #ffffff;
+  border: none;
+  border-radius: 2px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 5;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+}
+
+.boton:hover {
+  box-shadow: 0px 10px 10px rgba(46, 229, 157, 0.4);
+  transform: translateY(-2px);
+}
+
+.boton:active {
+  background-color: #2EE59D;
+  color: white;
+  border: none;
+  border-radius: 2px;
+}
+
+
+.botonActivo {
+  background-color: #2EE59D;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+  outline: none;   
+}
+
+.botonActivo:hover {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-2px);
+}
+
+.botonInactivo {
+  background: #ffffff;
+  border-radius: 2px;
+  border:none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.botonInactivo:hover {
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transform: translateY(-2px);
+}
+
+body{
+  
+  background: linear-gradient(45deg, rgba(238,119,82,0.55), rgba(231,60,126,0.55), rgba(35,166,213,0.55), rgba(35,213,171,0.55));
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+  background-color: white;
+  
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+div.sticky {
+  
+  font-family: 'Arial', sans-serif;
+  position: -webkit-sticky; /* Safari  */
+  position: sticky;
+  margin-left: 65%;
+  top: 4%;
+  margin-top: -4%;
+  background-color: white;
+  opacity: 0.4;
+  padding: 1%;
+  font-weight: normal;
+  font-size: 12px;
+  text-align: left;
+}
