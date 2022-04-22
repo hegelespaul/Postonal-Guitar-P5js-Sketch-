@@ -39,7 +39,7 @@ function dodeca() {
       "#2EE59D";
   }
   return bsel;
-}
+} 
 
 function toggle(index) {
   var t = document.getElementById(index.toString());
