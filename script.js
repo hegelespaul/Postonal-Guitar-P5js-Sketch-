@@ -61,6 +61,10 @@ function draw() {
     windowHeight * zoom + ((cp * mtx.length) / 10) * 6.5
   );
   scale(zoom);
+  noCursor();
+  noStroke();
+  fill(230, 230, 0, 100);
+  ellipse(mouseX / zoom, mouseY / zoom, cp * 10, cp * 10);
   construyeDiapa();
   constructorPosicion(chord);
   allDiagram();
@@ -296,27 +300,21 @@ class Diagram {
         }
       }
     }
-    rectMode(RADIUS);
-    rect(cp * 10, cp * 3.2 * 9, 9 * cp, 4 * cp);
-  }
-
-  clicked(px, py) {
-    let d = dist(px, py, cp * 10, cp * 3.2);
-    if (d < cp * 5) {
-      this.brightness = 255;
-      console.log('asies');
-    }
+    //rectMode(RADIUS);
+    //rect(cp * 10, cp * 3.2 * 9, 9 * cp, 4 * cp);
   }
 }
 ///////////////////////////////////////////////////////////////////////////////////////
+var arrayDiagram = [];
 
 function allDiagram() {
   if (fPrR != "") {
     fill(255);
+    strokeWeight(1.3);
     stroke(10);
     textSize(cp * 8.8);
     var content = "(" + fPrR.toString() + ")";
-    textPr = text(content, cp * 130, cp * 8.7);
+    textPr = text(content, cp * 145, cp * 8.8);
   }
 
   translate(0, cp * 3);
@@ -340,22 +338,14 @@ function allDiagram() {
     if (f === 0) {
       translate(cp * 2.5, 0);
       var l = new Diagram(fret, f, trm5);
-      function mousePressed() {
-        for (let i = 0; i < mtx.length; i++) {
-          l.clicked(mouseX, mouseY);
-        }
-      }
+      arrayDiagram.push(l);
     }
 
     if (f > 0 && xall < cp * 200) {
       push();
       translate(x, 0);
       var m = new Diagram(fret, f, trm5);
-      function mousePressed() {
-        for (let i = 0; i < mtx.length; i++) {
-          m.clicked(mouseX, mouseY);
-        }
-      }
+      arrayDiagram.push(m);
     }
 
     if (xall > cp * 200 - x) {
@@ -365,13 +355,47 @@ function allDiagram() {
       translate(-cp * 200 * fw + x, 0);
       translate(0, cp * 8.6 * fw * 1.2);
       var n = new Diagram(fret, f, trm5);
-      function mousePressed() {
-        for (let i = 0; i < mtx.length; i++) {
-          n.clicked(mouseX, mouseY);
-        }
-      }
+      arrayDiagram.push(n);
     }
   }
+}
+
+function mousePressed() {
+  var x;
+  var y;
+  if (mouseY > (cp * 30) / zoom) {
+    for (var i = 0; i < windowWidth / zoom; i++) {
+      if (Math.floor((mouseX / windowWidth / zoom) * 10) == i) {
+        x = i + 1;
+        console.log("x=" + x);
+      }
+      if (Math.floor((mouseY / windowWidth / zoom) * 19.5) == i) {
+        y = i - 3;
+        console.log("y=" + y);
+      }
+    }
+    var numeroDiagrama = y * 10 + x;
+    console.log("coord " + numeroDiagrama.toString());
+    var cordDiagrama = mtx[numeroDiagrama - 1];
+    var audioFinal = [];
+    for (var i = 0; i < cordDiagrama.length; i++) {
+      audioFinal.push([
+        cordDiagrama[i][0].toString() + "-" + cordDiagrama[i][1].toString(),
+      ]);
+    }
+    for (var i = 0; i < audioFinal.length; i++) {
+      let playD;
+      playD = new Audio();
+      playD.src =
+        "https://backendlessappcontent.com/17C93933-0F96-6D1A-FF14-E93903242A00/console/tppiiwrajfxxqncxxfxiemkhtkqomwkbneqr/files/view/Amplitube-20220405T033520Z-001/Amplitube/" +
+        audioFinal[i] +
+        ".wav";
+      playD.volume = 0.5;
+      playD.play();
+    }
+    console.log(audioFinal);
+  }
+  fullscreen(true);
 }
 
 /*
