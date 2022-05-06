@@ -387,7 +387,7 @@ function mousePressed() {
       let playD;
       playD = new Audio();
       playD.src =
-        "https://backendlessappcontent.com/17C93933-0F96-6D1A-FF14-E93903242A00/console/tppiiwrajfxxqncxxfxiemkhtkqomwkbneqr/files/view/Amplitube-20220405T033520Z-001/Amplitube/" +
+        "di/" +
         audioFinal[i] +
         ".wav";
       playD.volume = 0.5;
