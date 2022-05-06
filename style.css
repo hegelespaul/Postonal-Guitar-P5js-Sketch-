@@ -105,3 +105,7 @@ div.sticky {
   font-size: 12px;
   text-align: left;
 }
+
+@-ms-viewport{
+  width: device-width;
+}
