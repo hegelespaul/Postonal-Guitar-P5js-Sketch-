@@ -363,6 +363,7 @@ function allDiagram() {
 }
 
 function mousePressed() {
+  let audioschords = []
   let audioContext = new AudioContext();
   var x;
   var y;
@@ -393,12 +394,15 @@ function mousePressed() {
         "di/" +
         audioFinal[i] +
         ".mp3";
-      playD.volume = 0.5;
-      let track = audioContext.createMediaElementSource(playD);
-      track.connect(audioContext.destination);
-      playD.play();
+      playD.volume = 1/audioFinal.length;
+      audioschords.push(playD);
     }
     console.log(audioFinal);
+    for (var i = 0; i < audioschords.length; i++) {
+      let track = audioContext.createMediaElementSource(audioschords[i]);
+      track.connect(audioContext.destination);
+      audioschords[i].play();
+    }
   }
   fullscreen(true);
 }
