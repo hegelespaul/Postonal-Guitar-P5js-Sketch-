@@ -389,7 +389,7 @@ function mousePressed() {
       playD.src =
         "di/" +
         audioFinal[i] +
-        ".wav";
+        ".mp3";
       playD.volume = 0.5;
       playD.play();
     }
