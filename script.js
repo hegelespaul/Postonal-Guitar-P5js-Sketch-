@@ -1,3 +1,5 @@
+
+
 //holomorfo.mx@gmail.com
 let textPr;
 let cnv;
@@ -361,6 +363,7 @@ function allDiagram() {
 }
 
 function mousePressed() {
+  let audioContext = new AudioContext();
   var x;
   var y;
   if (mouseY > (cp * 30) / zoom) {
@@ -391,6 +394,8 @@ function mousePressed() {
         audioFinal[i] +
         ".mp3";
       playD.volume = 0.5;
+      let track = audioContext.createMediaElementSource(playD);
+      track.connect(audioContext.destination);
       playD.play();
     }
     console.log(audioFinal);
