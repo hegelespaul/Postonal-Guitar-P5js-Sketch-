@@ -117,15 +117,16 @@ function mySerie(index) {
       formaPrimaCal.push(tri0sum, retro0sum);
       formaPrimaSel.push(tri0, retro0);
       permu.push(
-        "desde " + tricorde[e].toString(),
+        " " + tricorde[e].toString(),
         tri0,
-        "retrogrado de " + tricorde[e].toString(),
+        "'" + tricorde[e].toString(),
         retro0
       );
     }
 
     var formaPrimaIn = formaPrimaCal.indexOf(Math.min(...formaPrimaCal));
     fPrR = formaPrimaSel[formaPrimaIn];
+    
     return permu;
   }
   console.log("permutaciones", permutaciones(), "</br>");

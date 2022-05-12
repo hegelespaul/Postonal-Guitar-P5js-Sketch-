@@ -48,7 +48,8 @@ function setup() {
   mastilWidth = windowWidth / 2;
   cp = mastilWidth * 0.01;
   cnv = createCanvas(windowWidth, windowHeight);
-  cnv.position(0, cp * 12);
+  cnv.parent('container');
+  //cnv.position(0, cp * 12);
   translate(0, cp * 2);
   textSize(cp * 1.7);
   textAlign(CENTER, CENTER);
