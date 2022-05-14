@@ -316,7 +316,7 @@ function allDiagram() {
     strokeWeight(1.3);
     stroke(10);
     textSize(cp * 8.8);
-    var content = "(" + fPrR.toString() + ")";
+    var content = fPrR;
     textPr = text(content, cp * 145, cp * 8.8);
   }
 
