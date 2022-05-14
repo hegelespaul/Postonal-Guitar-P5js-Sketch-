@@ -119,13 +119,13 @@ function mySerie(index) {
       formaPrimaSel.push(tri0, retro0);
       formaPrimaOri.push(tricorde[e].toString(),"'"+tricorde[e].toString());
       permu.push(
-        "(" + tri0 + ")" , " " + tricorde[e].toString(),
-        "(" + retro0 + ")" , "'" + tricorde[e].toString(),
+        "(" + tri0 + ")" + " " + tricorde[e].toString(),
+        "(" + retro0 + ")" + " '" + tricorde[e].toString(),
       );
     }
 
     var formaPrimaIn = formaPrimaCal.indexOf(Math.min(...formaPrimaCal));
-    fPrR = `(${formaPrimaSel[formaPrimaIn]})${formaPrimaOri[formaPrimaIn]}`;
+    fPrR = `(${formaPrimaSel[formaPrimaIn]}) ${formaPrimaOri[formaPrimaIn]}`;
     return permu;
   }
   console.log("permutaciones", permutaciones(), "</br>");

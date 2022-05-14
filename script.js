@@ -45,6 +45,7 @@ function resetAll() {
 }
 
 function setup() {
+  frameRate(24);
   mastilWidth = windowWidth / 2;
   cp = mastilWidth * 0.01;
   cnv = createCanvas(windowWidth, windowHeight);
