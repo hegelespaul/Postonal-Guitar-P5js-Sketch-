@@ -406,7 +406,7 @@ function mousePressed() {
       audioschords[i].play();
     }
   }
-  fullscreen(true);
+  fullscreen(false);
 }
 
 /*
