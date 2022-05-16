@@ -295,6 +295,8 @@ class Diagram {
             fill(30);
             noStroke();
             textSize(cp * 0.7);
+            //mtx[f][g][2]
+            //fPrRval[g]
             text(
               mtx[f][g][2].toString(),
               (trm5[j] * cp * 9.58) / 5 + cp * 1.7,
@@ -396,7 +398,7 @@ function mousePressed() {
         "di/" +
         audioFinal[i] +
         ".mp3";
-      playD.volume = 1/audioFinal.length;
+      playD.volume = 1 / audioFinal.length;
       audioschords.push(playD);
     }
     console.log(audioFinal);

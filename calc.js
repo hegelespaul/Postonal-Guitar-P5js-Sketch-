@@ -1,5 +1,7 @@
 var bsel = [];
 var fPrR = [];
+var fPrR = [];
+var fPrRval = [];
 
 function botones() {
   if (document.getElementsByClassName("botonActivo").length > 0) {
@@ -91,11 +93,12 @@ function mySerie(index) {
   /////////////////////////////////////////
 
   function permutaciones() {
+    
     var tricorde = input;
     var permu = [];
     var formaPrimaCal = [];
     var formaPrimaSel = [];
-    var formaPrimaOri= [];
+    var formaPrimaOri = [];
 
     for (var e = 0; e < tricorde.length; e++) {
       var tri0 = [];
@@ -117,7 +120,7 @@ function mySerie(index) {
 
       formaPrimaCal.push(tri0sum, retro0sum);
       formaPrimaSel.push(tri0, retro0);
-      formaPrimaOri.push(tricorde[e].toString(),"'"+tricorde[e].toString());
+      formaPrimaOri.push(tricorde[e].toString(), "'" + tricorde[e].toString());
       permu.push(
         "(" + tri0 + ")" + " " + tricorde[e].toString(),
         "(" + retro0 + ")" + " '" + tricorde[e].toString(),
@@ -126,6 +129,7 @@ function mySerie(index) {
 
     var formaPrimaIn = formaPrimaCal.indexOf(Math.min(...formaPrimaCal));
     fPrR = `(${formaPrimaSel[formaPrimaIn]}) ${formaPrimaOri[formaPrimaIn]}`;
+    //fPrRval = (formaPrimaSel[formaPrimaIn]);
     return permu;
   }
   console.log("permutaciones", permutaciones(), "</br>");
