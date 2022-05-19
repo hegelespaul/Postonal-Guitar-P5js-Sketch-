@@ -5,12 +5,11 @@ function acorde(){
  let traste = between(0,22);
  audios.push(cuerda.toString()+'-'+traste.toString());
  }
-console.log(audios);
+//console.log(audios);
 return audios;  
 }
 
 function playchord(coordenadas){
-let audioContext = new AudioContext();
 let audio1,audio2,audio3,audio4,audio5,audio6;
 
 audio1 = new Audio;  
@@ -61,8 +60,7 @@ function play() {
   var playbutton = document.getElementById("play");
   playbutton.addEventListener("click", playchord(acorde()));
   for (var i=0; i<6; i++);{
-  var listAsStr ="<ul>" + acorde() + "<ul>";
-  console.log(listAsStr);
+  console.log(acorde());
     }
 }
 

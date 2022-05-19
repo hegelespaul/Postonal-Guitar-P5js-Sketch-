@@ -159,7 +159,7 @@ function mySerie(index) {
     var p1 = input[0];
     var res = [];
     input.forEach(function (unaNota) {
-      var nuevoValor = (unaNota - p1) * -1 + parseInt(index);
+      var nuevoValor = (unaNota - p1) * -1 + p1;
       res.push((nuevoValor + 12) % 12);
     });
     return res;
