@@ -1,6 +1,3 @@
-
-
-//holomorfo.mx@gmail.com
 let textPr;
 let cnv;
 let cnvWidth;
