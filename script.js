@@ -22,6 +22,10 @@ var zMin = 1.0;
 var zMax = 2.0;
 var sensativity = 0.005;
 
+let audioContext = new AudioContext();
+
+p5.disableFriendlyErrors = true;
+
 function getChord() {
   chord = bsel;
   return chord;
@@ -42,7 +46,7 @@ function resetAll() {
 }
 
 function setup() {
-  frameRate(24);
+  frameRate(30);
   mastilWidth = windowWidth / 2;
   cp = mastilWidth * 0.01;
   cnv = createCanvas(windowWidth, windowHeight);
@@ -365,7 +369,6 @@ function allDiagram() {
 
 function mousePressed() {
   let audioschords = []
-  let audioContext = new AudioContext();
   var x;
   var y;
   if (mouseY > (cp * 30) / zoom) {
@@ -399,13 +402,18 @@ function mousePressed() {
       audioschords.push(playD);
     }
     console.log(audioFinal);
+    var allaudio = [];
+    let track;
     for (var i = 0; i < audioschords.length; i++) {
-      let track = audioContext.createMediaElementSource(audioschords[i]);
-      track.connect(audioContext.destination);
+      track = audioContext.createMediaElementSource(audioschords[i]);
+      allaudio.push(track);
+      track.connect(audioContext.destination)
+    }
+    for (var i = 0; i < allaudio.length; i++) {
       audioschords[i].play();
     }
   }
-  fullscreen(false);
+  //fullscreen(false);
 }
 
 /*
