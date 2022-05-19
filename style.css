@@ -69,8 +69,9 @@
 body{
   margin-left:1em;
   margin-bottom:2em;
-  background: linear-gradient(90deg,rgba(0, 132, 208, 0.63), rgba(141, 21, 205, 0.452));
+  background: linear-gradient(45deg,#68bcec,#84ecaae0);
 	background-size: 210% 210%;
+  animation: gradient 5s ease infinite;
 
 }
 
