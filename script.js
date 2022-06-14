@@ -26,6 +26,12 @@ let audioContext = new AudioContext();
 
 p5.disableFriendlyErrors = true;
 
+function replaceAt(array, index, value) {
+  const ret = array.slice(0);
+  ret[index] = value;
+  return ret;
+}
+
 function getChord() {
   chord = bsel;
   return chord;
@@ -238,7 +244,17 @@ function generadorDiagramas() {
     mtx = Array.from(new Set(mtx.map(JSON.stringify)), JSON.parse);
   });
   print(mtx);
+
+  var desc = [0,0,0,0,0,0]
+  for (var i=0;i<mtx[0].length;i++){
+  desc= replaceAt(desc,mtx[0][i][0]-1,mtx[0][i][1]);
+  }
+
+  //var trans = chordIdentifier.getAllChordsFromFretboard(0,desc);
+  //print(trans);
 }
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 class Diagram {
